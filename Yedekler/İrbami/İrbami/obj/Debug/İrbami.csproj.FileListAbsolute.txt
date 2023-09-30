@@ -1,0 +1,8 @@
+C:\Users\ozano\source\repos\İrbami\İrbami\bin\Debug\İrbami.exe.config
+C:\Users\ozano\source\repos\İrbami\İrbami\bin\Debug\İrbami.exe
+C:\Users\ozano\source\repos\İrbami\İrbami\bin\Debug\İrbami.pdb
+C:\Users\ozano\source\repos\İrbami\İrbami\obj\Debug\İrbami.csproj.AssemblyReference.cache
+C:\Users\ozano\source\repos\İrbami\İrbami\obj\Debug\İrbami.csproj.SuggestedBindingRedirects.cache
+C:\Users\ozano\source\repos\İrbami\İrbami\obj\Debug\İrbami.csproj.CoreCompileInputs.cache
+C:\Users\ozano\source\repos\İrbami\İrbami\obj\Debug\İrbami.exe
+C:\Users\ozano\source\repos\İrbami\İrbami\obj\Debug\İrbami.pdb

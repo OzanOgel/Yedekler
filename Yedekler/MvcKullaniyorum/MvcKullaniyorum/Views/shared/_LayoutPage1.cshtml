@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Assets/Css/PageMainLayout.css" rel="stylesheet" />
+   
+</head>
+<body>
+    <div class="UstMenu">
+        <h2>Köylüler Heyeti</h2>
+    </div>
+    <div class="tasiyici">
+        <div class="yanMenu">
+            <ul>
+                <a href="@Url.Action("Index","Anasayfa")">
+                <li>Anasayfa</li></a>
+                <a href="@Url.Action("Index","Kategori")">
+                <li>Kategoriler</li></a>
+
+            </ul>
+        </div>
+        <div class="icerik">
+            @RenderBody()
+        </div>
+    </div>
+
+</body>
+</html>

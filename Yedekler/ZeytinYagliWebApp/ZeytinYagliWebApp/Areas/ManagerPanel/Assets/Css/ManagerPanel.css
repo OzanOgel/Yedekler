@@ -1,0 +1,108 @@
+﻿*,h1,h2,h3,h4,h5,h6{
+    margin:0; padding:0;
+}
+
+
+body {
+    font-family: Calibri;
+}
+.topbar{
+    height:35px;
+    border-bottom:1px solid silver;
+    background-color:black;
+    padding:15px 5px;
+    color:white;
+    padding:15px 5px;
+
+}
+.topbar .brand{
+  font-size:16pt;
+}
+.sidebar{
+    width:250px;
+    padding:10px;
+    float:left;
+    height:1000px;
+    background-color:#252424
+
+}
+    .sidebar a {
+        text-decoration: none;
+        color: aquamarine;
+        display: block;
+        padding: 7px 3px;
+        border-bottom: 1px solid aquamarine;
+    }
+.container{
+    width:1000px;
+    padding:10px;
+    float:left;
+}
+.form{
+
+}
+.form-header{
+    padding:5px;
+    border-bottom:2px solid black;
+    color:black;
+   
+
+}
+.form-content{
+    padding:10px;
+}
+.row{
+    padding:10px 0;
+}
+.form-label{
+    display:block;
+    padding:5px 0;
+}
+.form-input{
+    width: 100%;
+    padding: 7px;
+}
+.form-validateMesage{
+    color:darkred;
+}
+.form-button{
+    border:none;
+    border-radius:3px;
+    color:aquamarine;
+    background-color:black;
+    padding:7px 20px;
+    
+}
+.form-cancellink{
+    color:gray;
+    text-decoration:none;
+
+}
+.form-cancellink:hover{
+    color:bisque;
+}
+.listtable {
+    width: 100%;
+    border-bottom:1px solid silver;
+}
+.listtable tr th{
+    border-bottom:2px solid silver;
+    background-color:#9bba98;
+    padding:7px 3px;
+}
+    .listtable tr td{
+        border-bottom:1px solid silver;
+        padding:7px 3px;
+    }
+    .listbtn{
+        padding:5px;
+        border-radius:2px;
+        color:white;
+    }
+.btnduzenle{
+    background-color:#3f743b;
+
+}
+.btnsil{
+    background-color:darkred;
+}

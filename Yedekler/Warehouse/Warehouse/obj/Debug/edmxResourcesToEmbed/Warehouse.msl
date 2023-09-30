@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WarehouseDBModelStoreContainer" CdmEntityContainer="WarehouseDBEntities">
+    <EntitySetMapping Name="Managers">
+      <EntityTypeMapping TypeName="WarehouseDBModel.Managers">
+        <MappingFragment StoreEntitySet="Managers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="activity" ColumnName="activity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="WarehouseDBModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCategorys">
+      <EntityTypeMapping TypeName="WarehouseDBModel.ProductCategorys">
+        <MappingFragment StoreEntitySet="ProductCategorys">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="activity" ColumnName="activity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="WarehouseDBModel.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="activity" ColumnName="activity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierStore">
+      <EntityTypeMapping TypeName="WarehouseDBModel.SupplierStore">
+        <MappingFragment StoreEntitySet="SupplierStore">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="activity" ColumnName="activity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

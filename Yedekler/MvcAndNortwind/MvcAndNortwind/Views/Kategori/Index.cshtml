@@ -1,0 +1,35 @@
+﻿@using MvcAndNortwind.Models
+@model IEnumerable<MvcAndNortwind.Models.Categories>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table border="1">
+            <tr>
+                <td>ID</td>
+                <td>isim</td>
+                <td>açıklama</td>
+            </tr>
+
+            @foreach (Categories item in Model)
+            {
+                <tr>
+                    <td>@item.CategoryID</td>
+                    <td>@item.CategoryName</td>
+                    <td>@item.Description</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>

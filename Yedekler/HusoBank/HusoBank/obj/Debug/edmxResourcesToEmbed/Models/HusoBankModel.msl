@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HusoBank_DBModelStoreContainer" CdmEntityContainer="HusoBank_DBEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="HusoBank_DBModel.Customers">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TCIDNumber" ColumnName="TCIDNumber" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="ExpMonth" ColumnName="ExpMonth" />
+          <ScalarProperty Name="ExpYear" ColumnName="ExpYear" />
+          <ScalarProperty Name="CCV" ColumnName="CCV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PosCustomers">
+      <EntityTypeMapping TypeName="HusoBank_DBModel.PosCustomers">
+        <MappingFragment StoreEntitySet="PosCustomers">
+          <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MerchantID" ColumnName="MerchantID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

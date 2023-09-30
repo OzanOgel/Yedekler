@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WarehousDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Managers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="activity" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="total" Type="Int32" />
+    <NavigationProperty Name="Products" Relationship="Self.fk_ProductOrders" FromRole="Orders" ToRole="Products" />
+    <NavigationProperty Name="SupplierStore" Relationship="Self.fk_StoreOrders" FromRole="Orders" ToRole="SupplierStore" />
+  </EntityType>
+  <EntityType Name="ProductCategorys">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="activity" Type="Boolean" />
+    <NavigationProperty Name="Products" Relationship="Self.fk_CategoryProducts" FromRole="ProductCategorys" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="stock" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="activity" Type="Boolean" />
+    <NavigationProperty Name="Orders" Relationship="Self.fk_ProductOrders" FromRole="Products" ToRole="Orders" />
+    <NavigationProperty Name="ProductCategorys" Relationship="Self.fk_CategoryProducts" FromRole="Products" ToRole="ProductCategorys" />
+  </EntityType>
+  <EntityType Name="SupplierStore">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="activity" Type="Boolean" />
+    <NavigationProperty Name="Orders" Relationship="Self.fk_StoreOrders" FromRole="SupplierStore" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="fk_ProductOrders">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_StoreOrders">
+    <End Role="SupplierStore" Type="Self.SupplierStore" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SupplierStore">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CategoryProducts">
+    <End Role="ProductCategorys" Type="Self.ProductCategorys" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategorys">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WarehousDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Managers" EntityType="Self.Managers" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" />
+    <EntitySet Name="ProductCategorys" EntityType="Self.ProductCategorys" />
+    <EntitySet Name="Products" EntityType="Self.Products" />
+    <EntitySet Name="SupplierStore" EntityType="Self.SupplierStore" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="fk_ProductOrders" Association="Self.fk_ProductOrders">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_StoreOrders" Association="Self.fk_StoreOrders">
+      <End Role="SupplierStore" EntitySet="SupplierStore" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CategoryProducts" Association="Self.fk_CategoryProducts">
+      <End Role="ProductCategorys" EntitySet="ProductCategorys" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

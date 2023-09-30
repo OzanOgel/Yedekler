@@ -1,0 +1,52 @@
+﻿@model  ZeytinYagliWebApp.Areas.ManagerPanel.modal.ManagerLoginViewModel
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Yönetici Giriş</title>
+    <link href="~/Areas/ManagerPanel/Assets/Css/Login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="~/Areas/ManagerPanel/Assets/Images/Wavy_Tech-28_Single-10.jpg" width="200" height="250" />
+        </div>
+        <div class="right">
+            @using (Html.BeginForm())
+            {
+                if (TempData["mesaj"] != null)
+                {
+                    <div class="mesaj">
+                        @TempData["mesaj"]
+                    </div>
+                }
+                <div class="row">
+                    <label class="input-label">Mail</label>
+                    @Html.EditorFor(x => x.Mail, new { htmlAttributes = new { @placeholder = "Ornek@Ornek.com", @class = "form-input" } })
+                    @Html.ValidationMessageFor(model => model.Mail)
+                </div>
+                <div>
+                    <label class="input-label">şifre</label>
+                    @Html.EditorFor(x => x.Password, new { htmlAttributes = new { @class = "form-input" } })
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+                <div class="row">
+                    <button type="submit" class="form-button">
+                        Giriş Yap
+                    </button>
+                </div>
+
+
+
+            }
+        </div>
+    </div>
+</body>
+</html>
